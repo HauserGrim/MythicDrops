@@ -26,6 +26,7 @@ import io.pixeloutlaw.minecraft.spigot.mythicdrops.lore
 import org.bukkit.enchantments.Enchantment
 import org.bukkit.inventory.ItemStack
 import org.bukkit.inventory.meta.Damageable
+import org.bukkit.inventory.meta.ItemMeta
 import org.bukkit.inventory.meta.Repairable
 
 internal fun ItemStack.setUnsafeEnchantments(enchantments: Map<Enchantment, Int>) {
@@ -42,7 +43,7 @@ internal fun <R> ItemStack.getFromItemMetaAsDamageable(action: Damageable.() -> 
 internal fun ItemStack.getThenSetItemMetaAsDamageable(action: Damageable.() -> Unit) {
     (this.itemMeta as? Damageable)?.let {
         action(it)
-        this.itemMeta = it
+        this.itemMeta = it as ItemMeta
     }
 }
 
@@ -53,7 +54,7 @@ internal fun <R> ItemStack.getFromItemMetaAsRepairable(action: Repairable.() -> 
 internal fun ItemStack.getThenSetItemMetaAsRepairable(action: Repairable.() -> Unit) {
     (this.itemMeta as? Repairable)?.let {
         action(it)
-        this.itemMeta = it
+        this.itemMeta = it as ItemMeta
     }
 }
 

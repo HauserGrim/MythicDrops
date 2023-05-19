@@ -9,7 +9,7 @@ softdepend:
   - ExcellentEnchants
   - HeadDatabase
   - WorldGuard
-api-version: "1.19"
+api-version: "1.17"
 commands: {}
 permissions:
   mythicdrops.identify:
